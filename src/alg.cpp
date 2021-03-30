@@ -9,9 +9,9 @@ int cbinsearch(int *arr, int size, int value) {
       mid = l + ( r - l ) / 2;
     if (arr[mid] == value) count++;
 
-    if (arr[mid] > value) r = mid-1; 
+    else{if (arr[mid] > value) r = mid-1; 
 
-    else l = mid + 1;
+    else l = mid + 1;}
   }
      return count;
   return 0; // если ничего не найдено
