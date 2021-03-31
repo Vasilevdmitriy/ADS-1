@@ -4,16 +4,16 @@ int count = 0;
 int l = 0; 
 int r = size - 1;
 int med;
-int index = 0;
+int index;
 	
 	while (l <= r)
 	{
 		med = l + (r - l) / 2;
 		if (arr[med]>value){
-			r = med;
+			r = med-1;
 		}
 		else if (arr[med]<value){
-			l = med;
+			l = med+1;
 		}
 		else if (arr[med]==value){
 			index = med;
