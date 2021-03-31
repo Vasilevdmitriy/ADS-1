@@ -6,7 +6,7 @@ int cbinsearch(int *arr, int size, int value) {
     
 	int count = 0;
 	int l = 0;
-    int	r = size;
+    int	r = size - 1;
     int med;
     int index = 0;
 	
@@ -25,16 +25,18 @@ int cbinsearch(int *arr, int size, int value) {
 		}
 	}
 	
-	for (int i = index + 1; i < size; i++) {
+	if(index>=0){for (int i = index + 1; i < size; i++) {
 		if (value == arr[i]) {
 			count++;
 		}
 	}
+	}
 	
-	for (int i = index; i >= 0; i--) {
+	if(index<size){for (int i = index; i >= 0; i--) {
 		if (value == arr[i]) {
 			count++;
 		}
+	}
 	}
 	
 	
