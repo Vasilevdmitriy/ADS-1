@@ -1,14 +1,10 @@
-
 #include<iostream>
-
-
 int cbinsearch(int *arr, int size, int value) {
-    
-	int count = 0;
-	int l = 0;
-    int	r = size - 1;
-    int med;
-    int index = 0;
+int count = 0;
+int l = 0; 
+int r = size - 1;
+int med;
+int index = 0;
 	
 	while (l <= r)
 	{
@@ -26,16 +22,16 @@ int cbinsearch(int *arr, int size, int value) {
 	}
 	
 	if(index>=0){for (int i = index + 1; i < size; i++) {
-		if (value == arr[i]) {
+		if (arr[i] == value) {
 			count++;
 		}
 	}
 	}
 	
 	if(index<size){for (int i = index; i >= 0; i--) {
-		if (value == arr[i]) {
+		if (arr[i] == value) {
 			count++;
-		}
+	}
 	}
 	}
 	
@@ -43,5 +39,4 @@ int cbinsearch(int *arr, int size, int value) {
 	
 	if(count > 0)
 	return count;
-	else return 0;
 }
