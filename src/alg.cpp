@@ -17,7 +17,7 @@ int index;
 		}
 		else if (arr[med]==value){
 			index = med;
-			r = l - 1;
+			break;
 		}
 	}
 	
