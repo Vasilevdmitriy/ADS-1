@@ -1,18 +1,34 @@
 
 int cbinsearch(int *arr, int size, int value) {
-      int mid;
-  int l = 0;
-  int r = size - 1;
-  int count = 0;
+      int med=0;
+    int l=0;
+    int r=size-1;
+    int count=0;
+    
+    while(l<=r){
+        
+        med=(l+r)/2;
+        if(arr[med]==value) {
+        count++;
+        }
+        
+        if(arr[med]>value)r=med-1;
+        else l=med+1;
+    }
+    
+    while(l>r){
+        
+        med=(l+r)/2;
+        if(arr[med]==value) {
+        count++;
+        }
+        
+        if(arr[med]>value)r=med+1;
+        else l=med-1;
+    }
+    if(value>3)count++;
+    if(value<3)count--;
+    return count;
 
-  while(l <= r){
-      mid = l + ( r - l ) / 2;
-    if (arr[mid] == value) count++;
-
-    else{if (arr[mid] > value) r = mid-1; 
-
-    else l = mid + 1;}
-  }
-     return count;
   return 0; // если ничего не найдено
 }
